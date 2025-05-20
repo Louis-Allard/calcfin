@@ -18,40 +18,38 @@ const Tab = ({ valeurInitiale, taux, periode }) => {
       });
     }
 
-    return { valeurs, sommeInterets: sommeInterets.toFixed(2) };
+    return { valeurs, sommeInterets: sommeInterets.toFixed(2), valeurFinale: valeurActuelle.toFixed(2) };
   };
 
-  const { valeurs, sommeInterets } = calculerValeurs();
+  const { valeurs, sommeInterets, valeurFinale } = calculerValeurs();
 
   return (
     <div>
-      Résultats du Calcul
+      <h2>Résultats du Calcul</h2>
       <table>
         <thead>
           <tr>
             <th>Période</th>
-            {valeurs.map((_, index) => (
-              <th key={index}>Année {index + 1}</th>
-            ))}
+            <th>Intérêts</th>
+            <th>Valeur</th>
           </tr>
         </thead>
         <tbody>
-          <tr>
-            <td>Intérêts</td>
-            {valeurs.map((valeur, index) => (
-              <td key={index}>{valeur.interet}</td>
-            ))}
-          </tr>
-          <tr>
-            <td>Valeur</td>
-            {valeurs.map((valeur, index) => (
-              <td key={index}>{valeur.valeur}</td>
-            ))}
-          </tr>
+          {valeurs.map((valeur, index) => (
+            <tr key={index}>
+              <td>Année {valeur.periode}</td>
+              <td>{valeur.interet}</td>
+              <td>{valeur.valeur}</td>
+            </tr>
+          ))}
         </tbody>
       </table>
+      <br />
       <div>
-        Somme des Intérêts Gagnés: {sommeInterets}
+        Somme des intérêts gagnés: {sommeInterets}
+      </div>
+      <div>
+        Somme totale gagnée à la fin de la période: <span className="st">{valeurFinale}</span>
       </div>
     </div>
   );

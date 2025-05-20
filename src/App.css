@@ -5,7 +5,7 @@
 body {
   background-color: #282c34;
   color: white;
-  font-size: 2rem;
+  font-size: 1.3rem;
 }
 
 form {
@@ -49,8 +49,14 @@ button:hover {
 
 table {
   border: 3px double grey;
+  width: 95%;
 }
 
 tr {
   border: 1px solid grey;
+}
+
+.st {
+  color: green;
+  font-weight: bold;
 }
