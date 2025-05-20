@@ -9,20 +9,26 @@ body {
 }
 
 form {
-  width: 80%;
-  border: 2px solid grey;
+  width: 100%;
+  margin: auto;
+}
+
+legend {
   margin: auto;
 }
 
 label {
   text-align: left;
-  width: 400px;
+  width: 35%;
   display: inline-block;
 }
 
+div {
+  margin-bottom: 10px;
+}
+
 input{
-  width: 600px;
-  margin-left:100px;
+  width: 60%;
 }
 
 input[type="number"] {
@@ -35,8 +41,16 @@ button {
   font-size: 2rem;
   height: 50px;
   color:green;
-  width: 300px;
+  width: 90%;
 }
 button:hover {
   cursor: pointer;
+}
+
+table {
+  border: 3px double grey;
+}
+
+tr {
+  border: 1px solid grey;
 }
