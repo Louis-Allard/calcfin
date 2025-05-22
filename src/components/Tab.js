@@ -1,4 +1,5 @@
-import React from 'react';
+import Graph from './Graph';
+import Graph2 from './Graph2';
 
 const Tab = ({ valeurInitiale, taux, periode }) => {
   // Calcul des intérêts et des valeurs pour chaque période
@@ -51,6 +52,9 @@ const Tab = ({ valeurInitiale, taux, periode }) => {
       <div>
         Somme totale gagnée à la fin de la période: <span className="st">{valeurFinale}</span>
       </div>
+              <Graph valeurs={valeurs} />
+              <br />
+                      <Graph2 valeurs={valeurs} valeurInitiale={valeurInitiale} />
     </div>
   );
 };
